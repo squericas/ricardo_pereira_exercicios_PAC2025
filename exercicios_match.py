@@ -43,3 +43,51 @@ match dicionario:
         print("Compra de", dicionario["valor"],"euros")
     case _:
         print("Pedido desconhecido") """
+
+""" -- EXERCICIO 4 -- 
+
+valor = "34543543543"
+def analisar(valor):
+    match valor:
+        case int():
+            return "Número inteiro"
+        case float():
+            return "Número decimal"
+        case str() as s:
+                try:
+                    float(s)
+                    return "String numérica"
+                except ValueError:
+                    return "String textual"
+        case list():
+            return "Lista"
+        case _:
+            return "Tipo desconhecido"
+
+print(analisar(valor)) """
+
+""" -- EXERCICIO 5 -- 
+
+def analisar(mensagem):
+    msg = mensagem.lower().strip()
+    match msg:
+        case "olá" | "bom dia":
+            return "Saudação"
+        case _:
+            if "tchau" in msg or "adeus" in msg:
+                return "Despedida"
+            elif msg.endswith("?"):
+                return "Pergunta"
+            else:
+                return "Mensagem Genérica"  
+
+
+print(analisar("olá"))
+print(analisar("bom dia"))
+print(analisar("Vou bazar, tchau"))
+print(analisar("Tudo bem?"))
+print(analisar("Nada a ver"))
+ """
+
+
+
