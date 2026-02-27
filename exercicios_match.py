@@ -10,7 +10,7 @@ match dia_da_semana:
     case _:
         print("Esse dia de semana não existe!") """
 
-""" -- EXERCICIO 2 --
+""" -- EXERCICIO 3 -- 
 
 nota_teste = float(input("Escreve a nota do teu teste (0-100): "))
 
@@ -24,7 +24,8 @@ match nota_teste:
     case n if n < 50:
         print("Tiveste NEGATIVA!")
     case _:
-        print("Nota inválida.") """
+        print("Nota inválida.")
+ """
 
 """ -- EXERCICIO 3 -- 
 
@@ -89,5 +90,50 @@ print(analisar("Tudo bem?"))
 print(analisar("Nada a ver"))
  """
 
+""" -- EXERCICIO 6 -- 
 
+def analisar_servidor(dicionario):
+    ping_alto = 200
+    match dicionario:
+        case {"status" : "ok", "tempo_resposta" : tempo} if tempo > ping_alto:
+            return "Servidor lento"
+        case {"status" : "ok"}:
+            return "Servidor ativo"
+        case {"status" : "erro"}:
+            return "Servidor indisponível"
+        case _:
+            return "Estado desconhecido"
+        
+print(analisar_servidor({"status":"ok","tempo_resposta":290}))
+print(analisar_servidor({"status":"ok","tempo_resposta":200}))
+print(analisar_servidor({"status":"erro","tempo_resposta":290})) """
 
+""" -- EXERCICIO 7 -- 
+def analisar_produto(dicionario):
+    produto_luxo = 1000 
+    match dicionario:
+        case {"categoria" : "eletronico","preco": preco} if preco > produto_luxo:
+            return "Produto de luxo"
+        case {"categoria" : "eletronico","preco": preco} if preco <= produto_luxo:
+            return "Produto comum"
+        case {"categoria" : "alimento"}:
+            return "Produto alimentar"
+        case _:
+            return "Categoria desconhecida"
+        
+print(analisar_produto({"categoria" : "eletronico","preco":1000}))
+print(analisar_produto({"categoria" : "eletronico","preco":2000}))
+print(analisar_produto({"categoria" : "alimento","preco":1000}))
+print(analisar_produto({"categoria" : "padaria","preco":1000}))
+ """
+
+def somar_numeros(n1,n2):
+    return n1 + n2 
+def subtrair_numeros(n1,n2):
+    return n1 - n2 
+def multiplicar_numeros(n1,n2):
+    return n1 * n2 
+def dividir_numeros(n1,n2):
+    return n1 / n2 
+
+operacao = input("Qual é a operação? (Somar/Subtrair/Multiplicar/Dividir)").lower()
