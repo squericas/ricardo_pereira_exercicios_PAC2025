@@ -1,6 +1,9 @@
-for i in range(0,10):
-    numero_pedido = int(input("Digite um número para saber se é par ou ímpar"))
-    if numero_pedido % 2 == 0:
-        print("Número par")
+def analisar_numero_par_impar(numero):
+    if numero % 2 == 0:
+        return "Número par"
     else:
-        print("Número ímpar")
+        return "Número ímpar"
+
+for i in range(1,11):
+    numero_escolhido = int(input("Digite um número para saber se é par ou ímpar: "))
+    print(analisar_numero_par_impar(numero_escolhido))
