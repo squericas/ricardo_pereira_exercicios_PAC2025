@@ -1,1 +1,0 @@
-# ricardo_pereira_exercicios_PAC2025
